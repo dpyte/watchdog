@@ -1,0 +1,322 @@
+## This file contains all the build statements describing the
+# compilation DAG.
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# 
+# Which is the root file.
+# =============================================================================
+
+# =============================================================================
+# Project: WatchDog
+# Configurations: Debug
+# =============================================================================
+
+#############################################
+# Minimal version of Ninja required by this file
+
+ninja_required_version = 1.5
+
+
+#############################################
+# Set configuration variable for custom commands.
+
+CONFIGURATION = Debug
+# =============================================================================
+# Include auxiliary files.
+
+
+#############################################
+# Include rules file.
+
+include CMakeFiles/rules.ninja
+
+# =============================================================================
+
+#############################################
+# Logical path to working directory; prefix for absolute paths.
+
+cmake_ninja_workdir = /Users/dpyte/dev/repos/ReckonLabs/WatchDog/build/
+
+#############################################
+# Utility command for edit_cache
+
+build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/dpyte/dev/repos/ReckonLabs/WatchDog/build && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build edit_cache: phony CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/dpyte/dev/repos/ReckonLabs/WatchDog/build && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S/Users/dpyte/dev/repos/ReckonLabs/WatchDog -B/Users/dpyte/dev/repos/ReckonLabs/WatchDog/build
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build rebuild_cache: phony CMakeFiles/rebuild_cache.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/dpyte/dev/repos/ReckonLabs/WatchDog/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for EXECUTABLE target watchdog
+
+
+#############################################
+# Order-only phony target for watchdog
+
+build cmake_object_order_depends_target_watchdog: phony || cmake_object_order_depends_target_IpcServer
+
+build src/CMakeFiles/watchdog.dir/watchdog.cxx.o: CXX_COMPILER__watchdog_Debug /Users/dpyte/dev/repos/ReckonLabs/WatchDog/src/watchdog.cxx || cmake_object_order_depends_target_watchdog
+  DEP_FILE = src/CMakeFiles/watchdog.dir/watchdog.cxx.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++17
+  INCLUDES = -I/Users/dpyte/dev/repos/ReckonLabs/WatchDog/src/include
+  OBJECT_DIR = src/CMakeFiles/watchdog.dir
+  OBJECT_FILE_DIR = src/CMakeFiles/watchdog.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target watchdog
+
+
+#############################################
+# Link the executable src/watchdog
+
+build src/watchdog: CXX_EXECUTABLE_LINKER__watchdog_Debug src/CMakeFiles/watchdog.dir/watchdog.cxx.o | src/IPC/libIpcServer.a || src/IPC/libIpcServer.a
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk
+  LINK_LIBRARIES = src/IPC/libIpcServer.a
+  OBJECT_DIR = src/CMakeFiles/watchdog.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = src/watchdog
+  TARGET_PDB = watchdog.dbg
+
+
+#############################################
+# Utility command for edit_cache
+
+build src/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/dpyte/dev/repos/ReckonLabs/WatchDog/build/src && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build src/edit_cache: phony src/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build src/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/dpyte/dev/repos/ReckonLabs/WatchDog/build/src && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S/Users/dpyte/dev/repos/ReckonLabs/WatchDog -B/Users/dpyte/dev/repos/ReckonLabs/WatchDog/build
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build src/rebuild_cache: phony src/CMakeFiles/rebuild_cache.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/dpyte/dev/repos/ReckonLabs/WatchDog/src/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target IpcServer
+
+
+#############################################
+# Order-only phony target for IpcServer
+
+build cmake_object_order_depends_target_IpcServer: phony || src/IPC/CMakeFiles/IpcServer.dir
+
+build src/IPC/CMakeFiles/IpcServer.dir/IpcChannel.cxx.o: CXX_COMPILER__IpcServer_Debug /Users/dpyte/dev/repos/ReckonLabs/WatchDog/src/IPC/IpcChannel.cxx || cmake_object_order_depends_target_IpcServer
+  DEP_FILE = src/IPC/CMakeFiles/IpcServer.dir/IpcChannel.cxx.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++17
+  INCLUDES = -I/Users/dpyte/dev/repos/ReckonLabs/WatchDog/src/include
+  OBJECT_DIR = src/IPC/CMakeFiles/IpcServer.dir
+  OBJECT_FILE_DIR = src/IPC/CMakeFiles/IpcServer.dir
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target IpcServer
+
+
+#############################################
+# Link the static library src/IPC/libIpcServer.a
+
+build src/IPC/libIpcServer.a: CXX_STATIC_LIBRARY_LINKER__IpcServer_Debug src/IPC/CMakeFiles/IpcServer.dir/IpcChannel.cxx.o
+  ARCH_FLAGS = -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = src/IPC/CMakeFiles/IpcServer.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = src/IPC/libIpcServer.a
+  TARGET_PDB = IpcServer.a.dbg
+
+
+#############################################
+# Utility command for edit_cache
+
+build src/IPC/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/dpyte/dev/repos/ReckonLabs/WatchDog/build/src/IPC && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build src/IPC/edit_cache: phony src/IPC/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build src/IPC/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/dpyte/dev/repos/ReckonLabs/WatchDog/build/src/IPC && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S/Users/dpyte/dev/repos/ReckonLabs/WatchDog -B/Users/dpyte/dev/repos/ReckonLabs/WatchDog/build
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build src/IPC/rebuild_cache: phony src/IPC/CMakeFiles/rebuild_cache.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# /Users/dpyte/dev/repos/ReckonLabs/WatchDog/src/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target Camera
+
+
+#############################################
+# Order-only phony target for Camera
+
+build cmake_object_order_depends_target_Camera: phony || src/vision/CMakeFiles/Camera.dir
+
+build src/vision/CMakeFiles/Camera.dir/Data.cxx.o: CXX_COMPILER__Camera_Debug /Users/dpyte/dev/repos/ReckonLabs/WatchDog/src/vision/Data.cxx || cmake_object_order_depends_target_Camera
+  DEP_FILE = src/vision/CMakeFiles/Camera.dir/Data.cxx.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk -std=gnu++17
+  INCLUDES = -I/Users/dpyte/dev/repos/ReckonLabs/WatchDog/src/include
+  OBJECT_DIR = src/vision/CMakeFiles/Camera.dir
+  OBJECT_FILE_DIR = src/vision/CMakeFiles/Camera.dir
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target Camera
+
+
+#############################################
+# Link the static library src/vision/libCamera.a
+
+build src/vision/libCamera.a: CXX_STATIC_LIBRARY_LINKER__Camera_Debug src/vision/CMakeFiles/Camera.dir/Data.cxx.o
+  ARCH_FLAGS = -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.3.sdk
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = src/vision/CMakeFiles/Camera.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = src/vision/libCamera.a
+  TARGET_PDB = Camera.a.dbg
+
+
+#############################################
+# Utility command for edit_cache
+
+build src/vision/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/dpyte/dev/repos/ReckonLabs/WatchDog/build/src/vision && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build src/vision/edit_cache: phony src/vision/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build src/vision/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cd /Users/dpyte/dev/repos/ReckonLabs/WatchDog/build/src/vision && /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake --regenerate-during-build -S/Users/dpyte/dev/repos/ReckonLabs/WatchDog -B/Users/dpyte/dev/repos/ReckonLabs/WatchDog/build
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build src/vision/rebuild_cache: phony src/vision/CMakeFiles/rebuild_cache.util
+
+# =============================================================================
+# Target aliases.
+
+build Camera: phony src/vision/libCamera.a
+
+build IpcServer: phony src/IPC/libIpcServer.a
+
+build libCamera.a: phony src/vision/libCamera.a
+
+build libIpcServer.a: phony src/IPC/libIpcServer.a
+
+build watchdog: phony src/watchdog
+
+# =============================================================================
+# Folder targets.
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/dpyte/dev/repos/ReckonLabs/WatchDog/build
+
+build all: phony src/all
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/dpyte/dev/repos/ReckonLabs/WatchDog/build/src
+
+build src/all: phony src/watchdog src/IPC/all src/vision/all
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/dpyte/dev/repos/ReckonLabs/WatchDog/build/src/IPC
+
+build src/IPC/all: phony src/IPC/libIpcServer.a
+
+# =============================================================================
+
+#############################################
+# Folder: /Users/dpyte/dev/repos/ReckonLabs/WatchDog/build/src/vision
+
+build src/vision/all: phony src/vision/libCamera.a
+
+# =============================================================================
+# Built-in targets
+
+
+#############################################
+# Re-run CMake if any of its inputs changed.
+
+build build.ninja: RERUN_CMAKE | ../CMakeLists.txt ../src/CMakeLists.txt ../src/IPC/CMakeLists.txt ../src/vision/CMakeLists.txt /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.23.2/CMakeCXXCompiler.cmake CMakeFiles/3.23.2/CMakeSystem.cmake
+  pool = console
+
+
+#############################################
+# A missing CMake input file is not an error.
+
+build ../CMakeLists.txt ../src/CMakeLists.txt ../src/IPC/CMakeLists.txt ../src/vision/CMakeLists.txt /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeCXXInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeCommonLanguageInclude.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeGenericSystem.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeInitializeConfigs.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeLanguageInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeSystemSpecificInformation.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/CMakeSystemSpecificInitialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/CMakeCommonCompilerMacros.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Compiler/GNU.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Apple-AppleClang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Apple-Clang-CXX.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Apple-Clang.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Darwin-Initialize.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/Darwin.cmake /Applications/CLion.app/Contents/bin/cmake/mac/share/cmake-3.23/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.23.2/CMakeCXXCompiler.cmake CMakeFiles/3.23.2/CMakeSystem.cmake: phony
+
+
+#############################################
+# Clean all the built files.
+
+build clean: CLEAN
+
+
+#############################################
+# Print all primary targets available.
+
+build help: HELP
+
+
+#############################################
+# Make the all target the default.
+
+default all

@@ -1,0 +1,5 @@
+# ninja log v5
+1	262	1660535667596519662	src/IPC/CMakeFiles/IpcServer.dir/IpcChannel.cxx.o	5b0460e5fff5827
+263	276	1660535667612626000	src/IPC/libIpcServer.a	9c90a3f8f044786f
+2	324	1660535695247794980	src/CMakeFiles/watchdog.dir/watchdog.cxx.o	8557cdcb34840816
+324	355	1660535695280538295	src/watchdog	e9e108a84b9628fe

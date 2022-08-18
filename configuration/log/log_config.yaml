@@ -1,0 +1,20 @@
+refresh_rate: 30 seconds
+
+appenders:
+    stdout:
+        kind: console
+    syslog:
+        kind: file
+        path: "/tmp/openads/log.log"
+        encoder:
+            pattern: "{d(%Y-%m-%d %H:%M:%S)} | {({1}):5.5} {P}::{I} -- {m}"
+
+root:
+    level: debug
+    appenders:
+        - stdout
+loggers:
+    step:
+        level: warn
+        appenders:
+            - syslog

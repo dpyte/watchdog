@@ -1,0 +1,129 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.18"
+					},
+					"projectIndex" : 0,
+					"source" : "."
+				},
+				{
+					"build" : "src",
+					"childIndexes" : 
+					[
+						2,
+						3
+					],
+					"jsonFile" : "directory-src-Debug-b6cf2213fc5053b67c22.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.18"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "src",
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"build" : "src/IPC",
+					"jsonFile" : "directory-src.IPC-Debug-7a2ba0897613c57b4475.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.18"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "src/IPC",
+					"targetIndexes" : 
+					[
+						1
+					]
+				},
+				{
+					"build" : "src/vision",
+					"jsonFile" : "directory-src.vision-Debug-b0350394a701f082cc42.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.18"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "src/vision",
+					"targetIndexes" : 
+					[
+						0
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					],
+					"name" : "WatchDog",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 3,
+					"id" : "Camera::@e2af23ad6c577d356164",
+					"jsonFile" : "target-Camera-Debug-4bd36892864d587f4ce4.json",
+					"name" : "Camera",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "IpcServer::@eb3397ea24d93a6187f1",
+					"jsonFile" : "target-IpcServer-Debug-1c26c92581c2b2c9d97a.json",
+					"name" : "IpcServer",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 1,
+					"id" : "watchdog::@145eef247bfb46b6828c",
+					"jsonFile" : "target-watchdog-Debug-b64b3100b5b62d0573ea.json",
+					"name" : "watchdog",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/dpyte/dev/repos/ReckonLabs/WatchDog/build",
+		"source" : "/Users/dpyte/dev/repos/ReckonLabs/WatchDog"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 4
+	}
+}

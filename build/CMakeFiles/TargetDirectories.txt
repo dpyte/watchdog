@@ -1,0 +1,11 @@
+/Users/dpyte/dev/repos/ReckonLabs/WatchDog/build/CMakeFiles/edit_cache.dir
+/Users/dpyte/dev/repos/ReckonLabs/WatchDog/build/CMakeFiles/rebuild_cache.dir
+/Users/dpyte/dev/repos/ReckonLabs/WatchDog/build/src/CMakeFiles/watchdog.dir
+/Users/dpyte/dev/repos/ReckonLabs/WatchDog/build/src/CMakeFiles/edit_cache.dir
+/Users/dpyte/dev/repos/ReckonLabs/WatchDog/build/src/CMakeFiles/rebuild_cache.dir
+/Users/dpyte/dev/repos/ReckonLabs/WatchDog/build/src/IPC/CMakeFiles/IpcServer.dir
+/Users/dpyte/dev/repos/ReckonLabs/WatchDog/build/src/IPC/CMakeFiles/edit_cache.dir
+/Users/dpyte/dev/repos/ReckonLabs/WatchDog/build/src/IPC/CMakeFiles/rebuild_cache.dir
+/Users/dpyte/dev/repos/ReckonLabs/WatchDog/build/src/vision/CMakeFiles/Camera.dir
+/Users/dpyte/dev/repos/ReckonLabs/WatchDog/build/src/vision/CMakeFiles/edit_cache.dir
+/Users/dpyte/dev/repos/ReckonLabs/WatchDog/build/src/vision/CMakeFiles/rebuild_cache.dir

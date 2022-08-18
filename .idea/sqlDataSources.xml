@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DdlMappings">
+    <mapping uuid="c9208ba5-ceb1-4578-a8be-756280fb4225" name="openads_storage Mapping">
+      <data-sources db="a5b13cc8-d60e-4f54-9582-9694df4aac9b" ddl="d1f7c580-1ff2-4172-8a30-40dbedb970c1" />
+    </mapping>
+  </component>
+</project>

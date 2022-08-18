@@ -1,0 +1,7 @@
+<!-- DO NOT USE THIS FILE FOR ANYTHING OTHER THAN TESTING USB-ATTACHED CAMERA DEVICES -->
+<!-- !NOTE: ProductId and the VendorId are not in uint16 format -->
+<cameras>
+    <camera name="nexus_external_wc" device_count="001" device_type="USB" vendor_id="7532" product_id="4728" id=""/>
+    <camera name="omen_wc" device_count="001" device_type="USB" vendor_id="1266" product_id="46631" id=""/>
+</cameras>
+
