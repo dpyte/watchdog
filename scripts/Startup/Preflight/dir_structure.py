@@ -1,7 +1,5 @@
 import pprint
-
 from .util import Graph
-from typing import Any, List, Type
 
 
 def path_to_bin_dir() -> str:
