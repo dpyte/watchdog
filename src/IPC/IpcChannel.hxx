@@ -3,7 +3,6 @@
 
 #include <array>
 
-#include "IpcMem.hxx"
 #include "WdTypes.hxx"
 
 namespace {
@@ -45,12 +44,10 @@ namespace Ipc {
     class Channel {
     private:
         String _name;
-        Array  *unit;
 
     public:
         Channel() = delete;
         explicit Channel(String name) : _name(std::move(name)) {
-            unit = new Array[BufSize];
         }
     };
 } // namespace Ipc
