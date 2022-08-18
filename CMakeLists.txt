@@ -26,5 +26,21 @@ if (NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
 			"RelWithDebInfo")
 endif ()
 
+# Set external projects
+set (ExternalPathToTinyXML2 "${CMAKE_CURRENT_SOURCE_DIR}/external/tinyxml2" CACHE STRING "Path to tinyxml2 conforms to")
+add_subdirectory ("${ExternalPathToTinyXML2}")
+
 add_subdirectory (src)
+
+# Testing
+include (FetchContent)
+FetchContent_Declare (
+		googletest
+		GIT_REPOSITORY https://github.com/google/googletest.git
+		GIT_TAG release-1.12.1
+)
+FetchContent_MakeAvailable(googletest)
+enable_testing ()
+add_subdirectory (test)
+
 
