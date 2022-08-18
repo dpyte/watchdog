@@ -1,5 +1,5 @@
-#ifndef WATCHDOG_DATA_HXX
-#define WATCHDOG_DATA_HXX
+#ifndef WATCHDOG_XML_HXX
+#define WATCHDOG_XML_HXX
 
 #include "Result.hxx"
 #include "tinyxml2.h"
@@ -10,8 +10,17 @@ namespace {
 }
 
 namespace WdData {
-    extern Result<XMLDocument*> parse_system_config(String const &path_to_sys_config);
+    struct DisplayConfig {
+        usize       height;
+        usize       width;
+        XMLDocument *document;
+
+        DisplayConfig() = default;
+        explicit DisplayConfig(usize ht, usize wd, XMLDocument *doc) : height(ht), width(wd), document(doc) {}
+    };
+
+    Result<DisplayConfig> parse_system_config(String const &path_to_sys_config);
 }
 
 
-#endif//WATCHDOG_DATA_HXX
+#endif//WATCHDOG_XML_HXX

@@ -2,6 +2,7 @@
 #ifndef WATCHDOG_WDTYPES_HXX
 #define WATCHDOG_WDTYPES_HXX
 
+#include <string>
 #include <cstdint>
 
 using u8  = uint8_t;
