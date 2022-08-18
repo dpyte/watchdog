@@ -1,6 +1,11 @@
 
-/build
+build
+venv 
+
+*.mp4
+
 /src/build-Ui-Qt*
+
 /__pycache__
 
 # This file is used to ignore files which are generated
