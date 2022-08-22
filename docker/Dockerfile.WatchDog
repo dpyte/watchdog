@@ -1,0 +1,7 @@
+
+FROM ubuntu:latest
+
+RUN apt-get update && apt upgrade -y
+RUN apt install clang ccache git python python3-pip cmake -y
+WORKDIR /app
+
