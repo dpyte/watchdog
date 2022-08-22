@@ -1,3 +1,4 @@
+make --dry-run --always-make --keep-going --print-directory
 make: Entering directory `/Users/dpyte/dev/repos/ReckonLabs/WatchDog'
 make: Leaving directory `/Users/dpyte/dev/repos/ReckonLabs/WatchDog'
  
