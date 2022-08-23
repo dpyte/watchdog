@@ -33,6 +33,16 @@
           </excludedPaths>
         </serverdata>
       </paths>
+      <paths name="Ubuntu (Parallels) Remote Host (b66ab3bd-5877-4c55-b205-f2e897635006)">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/tmp/tmp.QS6UjpnWTl" local="$PROJECT_DIR$" />
+          </mappings>
+          <excludedPaths>
+            <excludedPath local="true" path="$PROJECT_DIR$/build" />
+          </excludedPaths>
+        </serverdata>
+      </paths>
     </serverData>
   </component>
 </project>
