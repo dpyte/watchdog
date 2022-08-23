@@ -26,29 +26,6 @@ add_test (
 	COMMAND RunTestParsing
 )
 
-# === UI ===
-set (
-	TestUiSources
-	ui/TestUiWindow.cxx
-)
-
-add_executable (
-	RunTestUi
-	${TestUiSources}
-)
-
-target_link_libraries (
-	RunTestUi
-	gtest
-	gtest_main
-	WatchDogUiL
-)
-
-add_test (
-	NAME RunTestUi
-	COMMAND RunTestUi
-)
-
 # === Result ===
 set (
 	TestResults

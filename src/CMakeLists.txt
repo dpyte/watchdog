@@ -3,7 +3,6 @@ include_directories (include)
 
 add_subdirectory (IPC)
 add_subdirectory (vision)
-add_subdirectory (Ui)
 
 set (
 	PROGRAM_SOURCES
