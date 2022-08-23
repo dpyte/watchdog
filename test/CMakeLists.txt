@@ -4,6 +4,7 @@ find_package (GTest)
 include_directories ("${CMAKE_SOURCE_DIR}/src/")
 include_directories ("${CMAKE_SOURCE_DIR}/src/include")
 
+# === Parsing ===
 set (TestParsingSources
 	parsing/TestXmlSystemConfig.cxx
 )
@@ -24,3 +25,51 @@ add_test (
 	NAME RunTestParsing
 	COMMAND RunTestParsing
 )
+
+# === UI ===
+set (
+	TestUiSources
+	ui/TestUiWindow.cxx
+)
+
+add_executable (
+	RunTestUi
+	${TestUiSources}
+)
+
+target_link_libraries (
+	RunTestUi
+	gtest
+	gtest_main
+	WatchDogUiL
+)
+
+add_test (
+	NAME RunTestUi
+	COMMAND RunTestUi
+)
+
+# === Result ===
+set (
+	TestResults
+	TestResult.cxx
+)
+
+add_executable (
+	RunTestResults
+	${TestResults}
+)
+
+target_link_libraries (
+	RunTestResults
+	gtest
+	gtest_main
+)
+
+target_include_directories (RunTestResults INTERFACE "${CMAKE_SOURCE_DIR}/src/include")
+
+add_test (
+	Name RunTestResults
+	CMD  RunTestResults
+)
+
