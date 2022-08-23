@@ -4,7 +4,8 @@ venv
 
 *.mp4
 
-/src/build-Ui-Qt*
+web/node_modules
+web/src-tauri/target
 
 /__pycache__
 
