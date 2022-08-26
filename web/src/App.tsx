@@ -3,12 +3,6 @@ import { invoke } from "@tauri-apps/api/tauri";
 import "./App.css";
 
 function App() {
-  const [greetMsg, setGreetMsg] = useState("");
-  const [name, setName] = useState("");
-
-  async function greet() {
-    setGreetMsg(await invoke("greet", { name }));
-  }
 /* CMT1 
       <div className="row">
         <a href="https://vitejs.dev" target="_blank">
@@ -24,9 +18,12 @@ function App() {
 */
 
   return (
-    <div className="ActivityCenter">
-      <a>
-      </a>
+    <div className = "SideBars">    
+      <div className="ActivityCenter">
+        <a>
+
+        </a>
+      </div>
     </div>
   );
 }
