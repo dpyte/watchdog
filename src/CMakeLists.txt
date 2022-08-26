@@ -1,6 +1,7 @@
 
 include_directories (include)
 
+# add_subdirectory (WatchDogApp)
 add_subdirectory (IPC)
 add_subdirectory (vision)
 

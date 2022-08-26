@@ -1,7 +1,25 @@
-.logo.vite:hover {
-  filter: drop-shadow(0 0 2em #747bff);
+
+:root {
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 400;
+
+  color: #0f0f0f;
+  background-color: white;
+
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
 }
 
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafb);
+.ActivityCenter {
+  position: fixed;
+  overflow: hidden;
+  width: 100%;
+  height: 94.6%;
+  color: black;
+  background-color: white;
+  border-radius: 0px 0px 10px 10px;
 }

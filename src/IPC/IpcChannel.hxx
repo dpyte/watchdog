@@ -2,52 +2,38 @@
 #define WATCHDOG_IPCCHANNEL_HXX
 
 #include <array>
+#include <unordered_map>
 
+#include "Result.hxx"
 #include "WdTypes.hxx"
+#include "IpcObject.hxx"
 
-namespace {
-    template <typename Type>
-    class RSObject {
-    protected:
-        Type    *object;
-        usize   _index;
-        usize   _size;
-
-    public:
-        /**
-         * Allocate underlying memory object of type `Type` of size `_size`
-         * @param size
-         */
-        explicit RSObject(usize size) : _index(0), _size(size) {
-            object = new Type[size];
-        }
-
-        [[nodiscard]] usize index() const { return _index; }
-        [[nodiscard]] usize size()  const { return _size; }
-    };
-
-    template <typename Type>
-    class Sender : protected RSObject<Type> {
-    private:
-
-    };
-
-    template <typename Type>
-    class Receiver : protected RSObject<Type> {
-    private:
-
-    };
-}
+/**
+ *             [*]
+ *              |
+ *             / \
+ *            /   \
+ *         [=]     [=]
+ *
+ */
 
 namespace Ipc {
     template <typename Type, std::size_t BufSize>
     class Channel {
     private:
-        String _name;
+        static std::unordered_map<String, IpcDetails::IpcServer<Type, BufSize>> keepsafe;
 
     public:
-        Channel() = delete;
-        explicit Channel(String name) : _name(std::move(name)) {
+        Channel() = default;
+
+        /**
+         * Create a new object using default allocation size
+         * @param name Name of the server
+         */
+        static void NewServer(String const &name) {
+            static const usize iarraysize = 16;
+            auto n_object = IpcDetails::IpcServer<Type, BufSize>(name);
+            keepsafe[name] = std::move(n_object);
         }
     };
 } // namespace Ipc

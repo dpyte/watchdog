@@ -5,16 +5,11 @@
 
 #[tauri::command]
 fn greet(name: &str) -> String {
-    if name.is_empty() {
-        format!("Please enter a valid value ...")
-    } else {
-        format!("Hello, {}! You've been greeted from Rust!", name)
-    }
+    format!("Hello, {}! You've been greeted from Rust!", name)
 }
 
 fn main() {
     tauri::Builder::default()
-        .invoke_handler(tauri::generate_handler![greet])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }

@@ -26,6 +26,28 @@ add_test (
 	COMMAND RunTestParsing
 )
 
+# === IPC ===
+set (TestIpcSources
+	ipc/TestIpcChannel.cxx
+	)
+
+add_executable (
+	RunTestIpc
+	${TestIpcSources}
+)
+
+target_link_libraries (
+	RunTestIpc
+	IpcServer
+	gtest
+	gtest_main
+)
+
+add_test (
+	NAME RunTestIpc
+	COMMAND RunTestIpc
+)
+
 # === Result ===
 set (
 	TestResults
