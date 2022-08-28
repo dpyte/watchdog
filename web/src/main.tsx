@@ -1,9 +1,8 @@
+import "./style.css";
+import App from "./App";
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App";
-import NavigationBar from "./Navigation";
-import EventListings from "./EventListings";
-import "./style.css";
+import NavigationPanel from "./Navigation/NavigationPanel";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   /**
@@ -17,8 +16,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <body>
       <App />
-      <EventListings />
-      <NavigationBar />
+      <NavigationPanel />
     </body>
   </React.StrictMode>
 );
