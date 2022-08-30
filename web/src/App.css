@@ -14,9 +14,22 @@
 }
 
 .ActivityCenter {
-  left: 10%;
   color: white;
   background-color: black;
-  border-radius: 8px 8px 16px 16px;
-  height: 94vh;
+  height: 96vh;
 }
+
+.ActivityCenter:ActivityListener {
+  right: 80%;
+  border-radius: 0px 8px 0px 16px;
+}
+
+
+.ActivityCenter:EventListener {
+  left: 20%;
+  border-right: 96vh;
+  border-width: 2px;
+  border-color: aliceblue;
+  border-radius: 8px 0px 16px 0px;
+}
+

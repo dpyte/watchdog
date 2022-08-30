@@ -3,14 +3,53 @@
 
 #include <memory>
 #include <utility>
+#include <type_traits>
+#include <unordered_map>
 
 #include "Result.hxx"
 #include "WdTypes.hxx"
 
 namespace IpcDetails {
-
-
     template <typename Type, std::size_t IASize>
+    class IpcClient {
+    using IArray = std::array<Type, IASize>;
+    private:
+        String name;
+        IArray buffer;
+        usize  index {0};
+        Type const *s_buffer; // This is where it is going to keep track of the data
+
+    public:
+        IpcClient() = default;
+
+        explicit IpcClient(String c_name, Type *server_buffer) : name(std::move(c_name)), index(0) {
+            if (server_buffer == nullptr) {
+                // !TODO: Raise an error
+            }
+            s_buffer = server_buffer;
+        }
+
+        /**
+         *
+         * @return Returns a newly allocated value
+         */
+        [[nodiscard]] Type receive() const { return buffer[index]; }
+
+        /**
+         * Removes an element from the buffer. In addition to removing the element,
+         */
+        void remove() {
+
+        }
+
+        /**
+         *
+         * @return Name of the client
+         */
+        [[nodiscard]] String client_name() const { return name; }
+    };
+
+    template <typename Type>
     /**
      * Data inside this class are immutable from outside
      * In addition to that, the server class will be responsible for handing out client
@@ -19,39 +58,36 @@ namespace IpcDetails {
      * @tparam IASize Total amount of objects to accommodate. This number will be double for the server
      */
     class IpcServer {
-    using IArray = std::array<Type, IASize * 2>;
+    using IClient = IpcClient<Type, 8>;
     private:
-        String s_name;
-        std::unique_ptr<IArray> object;
-        usize idx {0};
+        String                  s_name;
+        std::shared_ptr<Type>   object;
+        usize                   idx {0};
+        std::unordered_map<String, IClient> clients;
 
-        [[nodiscard]] IArray *g_iarray() const noexcept {
-            return object.get();
-        }
+        [[nodiscard]] Type *g_iarray() const noexcept { return object.get(); }
 
     public:
         IpcServer() = default;
-        explicit IpcServer(String name) : s_name(std::move(name)), idx(0) {
-            object = std::make_unique<IArray>();
-            if (not object) { /* Report accordingly */ }
-        }
 
-        explicit IpcServer(String &name): s_name(std::move(name)), idx(0) {
-            object = std::make_unique<IArray>();
-            if (not object) { /* Report accordingly */ }
-        }
+        explicit IpcServer(String const &name) : s_name(name) {}
 
-        void append_obj(Type obj) {
-            if (idx >= IASize) idx = 0;
-            g_iarray()[idx] = obj;
-        }
+        /**
+         * Send data to the shared state
+         * @type: Data to send
+         */
+        void send(Type const &type) {
+            if (not std::is_pointer<Type>::value) return;
+            object = std::make_shared<Type>(type);
+        } 
 
-        void append_obj(Type &obj) {
-            if (idx >= IASize) idx = 0;
-            g_iarray()[idx] = std::move(obj);
-        }
+        [[nodiscard]] Result<IClient> subscribe(String const &client_name) const {
+            const auto oobj = g_iarray();
+			if (!oobj) return ReturnResult(IClient(), String("Subscriber object is no longer valid"));
 
-        [[nodiscard]] usize size() const { return g_iarray()->size(); }
+			auto subobj = IClient(client_name, g_iarray());
+			return ReturnResult(subobj, String());
+		}
     };
 }
 

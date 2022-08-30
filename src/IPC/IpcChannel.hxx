@@ -21,7 +21,7 @@ namespace Ipc {
     template <typename Type, std::size_t BufSize>
     class Channel {
     private:
-        static std::unordered_map<String, IpcDetails::IpcServer<Type, BufSize>> keepsafe;
+        static std::unordered_map<String, IpcDetails::IpcServer<Type>> keepsafe;
 
     public:
         Channel() = default;
@@ -32,7 +32,7 @@ namespace Ipc {
          */
         static void NewServer(String const &name) {
             static const usize iarraysize = 16;
-            auto n_object = IpcDetails::IpcServer<Type, BufSize>(name);
+            auto n_object = IpcDetails::IpcServer<Type>(name);
             keepsafe[name] = std::move(n_object);
         }
     };

@@ -37,11 +37,6 @@ endif ()
 set (ExternalPathToTinyXML2 "${CMAKE_CURRENT_SOURCE_DIR}/external/tinyxml2" CACHE STRING "Path to tinyxml2 conforms to")
 add_subdirectory ("${ExternalPathToTinyXML2}")
 
-# Vulkan
-find_package (Vulkan REQUIRED)
-find_package (glfw3 REQUIRED)
-add_subdirectory ("${CMAKE_CURRENT_SOURCE_DIR}/external/vulkan-headers")
-
 add_subdirectory (src)
 
 # Testing

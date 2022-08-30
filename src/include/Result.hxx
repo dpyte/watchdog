@@ -43,5 +43,10 @@ inline Result<Type, Error> ReturnResult(Type type, String msg) {
 template <typename Type>
 inline bool CheckError(Result<Type, String> const &err) { return !err.second.empty(); }
 
+template <typename Type>
+inline Type ResultObject(Result<Type, String> const &robj) { return std::move(*robj.first); }
+
+template <typename Type>
+inline String ResultMessage(Result<Type, String> const &obj) { return obj.second; }
 
 #endif//WATCHDOG_RESULT_HXX

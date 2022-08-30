@@ -1,6 +1,17 @@
+import React from "react";
 import { useState } from "react";
 import { invoke } from "@tauri-apps/api/tauri";
 import "./App.css";
+
+class ActivityCenter extends React.Component {
+  render() {
+    return (
+    <div className="ActivityListener">
+      
+    </div>
+    );
+  }
+}
 
 function App() {
 /* CMT1 
@@ -18,12 +29,8 @@ function App() {
 */
 
   return (
-    <div className = "SideBars">    
-      <div className="ActivityCenter">
-        <a>
-
-        </a>
-      </div>
+    <div className="ActivityCenter">
+      <ActivityCenter />
     </div>
   );
 }
