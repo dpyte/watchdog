@@ -1,7 +1,8 @@
 #include <services.hxx>
+#include <spdlog/spdlog.h>
 
 auto main(int argc, const char **argv) -> int {
+    spdlog::warn("Starting watchdog core");
     auto core = WdService::CoreService(WdService::Names::Cored);
-    std::fprintf(stderr, "Starting watchdog core\ncore status: %s\n", core.get_status_as_str());
     return 0;
 }
