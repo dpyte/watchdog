@@ -28,8 +28,6 @@ web/src-tauri/target
 *.qm
 .#*
 *.*#
-core
-!core/
 tags
 .DS_Store
 .directory
