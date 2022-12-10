@@ -1,9 +1,6 @@
 
-include_directories (include)
-
-# add_subdirectory (WatchDogApp)
-add_subdirectory (IPC)
-add_subdirectory (vision)
+include_directories (${CMAKE_SOURCE_DIR}/core/services)
+include_directories (${CMAKE_SOURCE_DIR}/core/include)
 
 set (
 	PROGRAM_SOURCES
@@ -17,6 +14,7 @@ add_executable(
 
 target_link_libraries (
 	watchdog
-	IpcServer
+	PRIVATE
+	pthread
+	watchdog-core
 )
-

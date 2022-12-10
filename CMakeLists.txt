@@ -32,22 +32,47 @@ if (NOT CMAKE_BUILD_TYPE AND NOT CMAKE_CONFIGURATION_TYPES)
 			"Release"
 			"RelWithDebInfo")
 endif ()
+############################################################
+## detect includes
+include (cmake/CheckIncludes.cmake)
 
-# Set external projects
-set (ExternalPathToTinyXML2 "${CMAKE_CURRENT_SOURCE_DIR}/external/tinyxml2" CACHE STRING "Path to tinyxml2 conforms to")
-add_subdirectory ("${ExternalPathToTinyXML2}")
+## print info
+message (STATUS "build info:")
+message (STATUS "  Host System: ${CMAKE_HOST_SYSTEM}")
+message (STATUS "  Host System Name: ${CMAKE_HOST_SYSTEM_NAME}")
+message (STATUS "  Host System Processor: ${CMAKE_HOST_SYSTEM_PROCESSOR}")
+
+include (FetchContent)
+include (CheckCXXCompilerFlag)
+
+############################################################
+# Set compiler flags
+set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -fstack-protector-strong -funroll-loops -Wconversion")
+
+check_cxx_compiler_flag (-fno-builtin HAVE_FNO_BUILTIN)
+check_cxx_compiler_flag (-fstack-protector-strong HAS_STACK_PROTECTOR_STRONG)
+
+if (HAVE_FNO_BUILTIN)
+	add_compile_options (-fno-builtin)
+endif ()
+
+if (HAS_STACK_PROTECTOR_STRONG)
+	add_compile_options (-fstack-protector-strong)
+	link_libraries (-fstack-protector-strong)
+endif ()
+
+add_compile_options (-Wstrict-overflow=2)
+
+# Configure output directory
+set (CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
+
+############################################################
+# core
+add_subdirectory (core)
+
+############################################################
+# src
 
 add_subdirectory (src)
 
-# Testing
-include (FetchContent)
-FetchContent_Declare (
-		googletest
-		GIT_REPOSITORY https://github.com/google/googletest.git
-		GIT_TAG release-1.12.1
-)
-FetchContent_MakeAvailable(googletest)
-enable_testing ()
-add_subdirectory (test)
-
-
+add_dependencies (watchdog watchdog-core)
