@@ -3,5 +3,6 @@
     "DockerRun.DisableDockerrc": true,
     "DockerRun.Containers": [
         "2843a147fb9a"
-    ]
+    ],
+    "cmake.sourceDirectory": "${workspaceFolder}/."
 }
