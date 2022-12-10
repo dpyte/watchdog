@@ -67,6 +67,21 @@ add_compile_options (-Wstrict-overflow=2)
 set (CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
 
 ############################################################
+# Common dependency
+set (
+	DEP_LIBRARIES
+	watchdog-core
+	pthread
+	rt
+	spdlog
+	fmt
+	dl
+	ssl
+	crypto
+	nlohmann_json::nlohmann_json
+)
+
+############################################################
 # core
 add_subdirectory (core)
 
