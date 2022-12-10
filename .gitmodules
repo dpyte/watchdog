@@ -4,3 +4,6 @@
 [submodule "external/vulkan-headers"]
 	path = external/vulkan-headers
 	url = https://github.com/KhronosGroup/Vulkan-Headers.git
+[submodule "core"]
+	path = core
+	url = git@github.com:dpyte/watchdog-core.git
