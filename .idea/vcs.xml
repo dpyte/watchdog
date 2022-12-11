@@ -3,5 +3,10 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/core" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/core/lib/Crow" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/core/lib/SQLiteCpp" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/core/lib/date" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/core/lib/json" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/core/lib/toml11" vcs="Git" />
   </component>
 </project>

@@ -1,8 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DdlMappings">
-    <mapping uuid="c9208ba5-ceb1-4578-a8be-756280fb4225" name="openads_storage Mapping">
-      <data-sources db="a5b13cc8-d60e-4f54-9582-9694df4aac9b" ddl="d1f7c580-1ff2-4172-8a30-40dbedb970c1" />
+    <mapping uuid="0d26e6ac-5d5e-40d7-a27b-25bed52e30f4" name="DDL Mapping">
+      <data-sources db="dee643d6-2817-48f0-81dd-5ea6cc613cc0" ddl="8884adcc-788b-43b2-8b88-4c752e2e6f2e" />
     </mapping>
+  </component>
+  <component name="SqlDataSourceStorage">
+    <option name="dataSources">
+      <list>
+        <State>
+          <option name="id" value="8884adcc-788b-43b2-8b88-4c752e2e6f2e" />
+          <option name="name" value="identifier.sqlite (DDL)" />
+          <option name="dbmsName" value="SQLITE" />
+          <option name="urls">
+            <array>
+              <option value="file://$PROJECT_DIR$/core/schema/cameradetails.sql" />
+            </array>
+          </option>
+        </State>
+      </list>
+    </option>
   </component>
 </project>
