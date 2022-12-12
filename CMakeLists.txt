@@ -4,6 +4,7 @@ set_property (GLOBAL PROPERTY USE_FOLDERS ON)
 
 project (
 	WatchDog
+	C
 	CXX
 )
 
@@ -15,7 +16,7 @@ if (NOT CMAKE_SIZEOF_VOID_P EQUAL 8)
 	message (FATAL_ERROR "Cannot compile this project on 32-bit architecture")
 endif()
 
-set (CMAKE_CXX_STANDARD 17)
+set (CMAKE_CXX_STANDARD 20)
 set (CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake/")
 
