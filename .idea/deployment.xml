@@ -2,41 +2,31 @@
 <project version="4">
   <component name="PublishConfigData" remoteFilesAllowedToDisappearOnAutoupload="false">
     <serverData>
-      <paths name="FreeBSD - Remote Host (1c9c90bb-0f88-4b07-8e0b-0ddd6dbac4a2)">
+      <paths name="AtomServices (8d54ffbb-6884-4f33-9fef-d3244be875f3)">
         <serverdata>
           <mappings>
-            <mapping deploy="/tmp/tmp.kv6U5Gfo" local="$PROJECT_DIR$" />
+            <mapping local="$PROJECT_DIR$" web="/" />
           </mappings>
-          <excludedPaths>
-            <excludedPath local="true" path="$PROJECT_DIR$/build" />
-          </excludedPaths>
         </serverdata>
       </paths>
-      <paths name="Omen - Remote Host (43bec547-4b86-4605-a479-676d99b0bc83)">
+      <paths name="Ava development (9888189b-b59c-4016-8af5-75f4645af077)">
         <serverdata>
           <mappings>
-            <mapping deploy="/tmp/tmp.lhDNiebxJr" local="$PROJECT_DIR$" />
+            <mapping local="$PROJECT_DIR$" web="/" />
           </mappings>
-          <excludedPaths>
-            <excludedPath local="true" path="$PROJECT_DIR$/build" />
-          </excludedPaths>
         </serverdata>
       </paths>
-      <paths name="PhiX - Remote Host (a6c66909-11b3-42f4-af04-b12279fc491d)">
+      <paths name="Parallels Debian (55f064d5-3937-48d3-84e3-5fa99784142d)">
         <serverdata>
           <mappings>
-            <mapping deploy="/tmp/tmp.6TgWHMtwW4" local="$PROJECT_DIR$" />
+            <mapping local="$PROJECT_DIR$" web="/" />
           </mappings>
-          <excludedPaths>
-            <excludedPath local="true" path="$PROJECT_DIR$/cmake-build-debug-phix---remote-host-coverage" />
-            <excludedPath local="true" path="$PROJECT_DIR$/build" />
-          </excludedPaths>
         </serverdata>
       </paths>
-      <paths name="Ubuntu (Parallels) Remote Host (b66ab3bd-5877-4c55-b205-f2e897635006)">
+      <paths name="WatchDog-Dev (7ad2dc5d-0f0a-4acd-bafb-b57bd2a8ed58)">
         <serverdata>
           <mappings>
-            <mapping deploy="/tmp/tmp.QS6UjpnWTl" local="$PROJECT_DIR$" />
+            <mapping deploy="dev/repos/ReckonLabs/watchdog" local="$PROJECT_DIR$" />
           </mappings>
           <excludedPaths>
             <excludedPath local="true" path="$PROJECT_DIR$/build" />
