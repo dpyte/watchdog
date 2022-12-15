@@ -7,3 +7,6 @@
 [submodule "core"]
 	path = core
 	url = git@github.com:dpyte/watchdog-core.git
+[submodule "models"]
+	path = models
+	url = git@github.com:dpyte/models-openads.git
